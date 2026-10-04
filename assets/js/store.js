@@ -68,6 +68,11 @@
       s.cleanSlate = true;
       persist(s);
     }
+    // Replace the old default name in profiles saved before it changed.
+    if (s.profile && s.profile.name === "Noah Morgan") {
+      s.profile.name = "Gerardo Piedra";
+      persist(s);
+    }
     return s;
   }
   function persist(s) {
